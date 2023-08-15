@@ -4,19 +4,7 @@ import numpy as np
 from absl import flags
 import sys
 
-# Define the adjacency matrix (binary connections between nodes)
-adjacency_matrix = np.array([[0, 1, 0, 1],
-                             [1, 0, 1, 1],
-                             [0, 1, 0, 0],
-                             [1, 1, 0, 0]], dtype=np.float32)
-
-# Define node features
-node_features = np.array([[0.1, 0.2],
-                          [0.3, 0.4],
-                          [0.5, 0.6],
-                          [0.7, 0.8]], dtype=np.float32)
-
-# Hyperparameters3
+# Hyperparameters
 FLAGS = flags.FLAGS
 flags.DEFINE_integer('hidden1', 32, 'Number of units in hidden layer 1.')
 flags.DEFINE_integer('hidden2', 16, 'Number of units in hidden layer 2.')
@@ -24,7 +12,6 @@ flags.FLAGS(sys.argv)
 
 num_nodes = adjacency_matrix.shape[0]
 num_features = node_features.shape[1]
-hidden_units = 16
 learning_rate = 0.01
 num_epochs = 100
 
